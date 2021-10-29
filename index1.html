@@ -13,6 +13,7 @@
 <body>
     
     <h2>Accordion</h2>
+    <h5>animation added</h5>
 
     <button class="accordion">Section 1</button>
     <div class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quo! Reprehenderit voluptas, odit numquam ad voluptate officiis enim maiores aliquid, dolorem dolorum est nihil mollitia corrupti praesentium aut? Dolorum, quis?</div>
@@ -30,10 +31,10 @@
             acc[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
                 } else {
-                    panel.style.display = "block";
+                    panel.style.maxHeight = panel.scrollHeight + "px";
                 }
             });
         }
